@@ -1,0 +1,5 @@
+# Project dependencies (library names)
+# Pin Django to the same major/minor hinted in settings. Other packages unpinned — pin if you need reproducible installs.
+Django==5.2.9
+djangorestframework
+firebase-admin

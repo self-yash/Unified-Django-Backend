@@ -4,5 +4,5 @@ from PDFSeva import views
 
 
 urlpatterns = [
-    path('test',views.add_device,name="add_device"),
+    path('add_device',views.add_device,name="add_device"),
 ]
