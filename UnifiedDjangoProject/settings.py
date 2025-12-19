@@ -28,7 +28,9 @@ DEBUG = True
 ALLOWED_HOSTS = ["django.nexiotech.cloud",
                  "www.django.nexiotech.cloud",
                  "localhost",
-                 "127.0.0.1"]
+                 "127.0.0.1",
+                 "172.188.16.197",
+                 ]
 
 
 # Application definition
