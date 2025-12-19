@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-9ay3j)r*)&$cc!64-%ohd6fy599fao@v8qp(p&cifq5t1k7t^b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django.nexiotech.cloud']
+ALLOWED_HOSTS = ["django.nexiotech.cloud",
+                 "www.django.nexiotech.cloud",
+                 "localhost",
+                 "127.0.0.1"]
 
 
 # Application definition
