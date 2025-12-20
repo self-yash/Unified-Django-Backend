@@ -29,18 +29,17 @@ def add_device(request):
 
     devices_ref = db.collection("devices")
 
-    # matching by device_id
-    doc_ref = devices_ref.document(device_id)
-    doc_snapshot = doc_ref.get()
-
     firestore_data = {
         **data,
         "timestamp": firestore.SERVER_TIMESTAMP
     }
+    # matching by device_id
 
-    if doc_snapshot.exists:
-        # Update existing document by device_id
-        doc_ref.update(firestore_data)
+    query = devices_ref.where("device_id", "==", device_id).limit(1).stream()
+    matched_docs = list(query)
+    if matched_docs:
+        existing_doc = matched_docs[0]
+        devices_ref.document(existing_doc.id).update(firestore_data)
 
         return Response(
             {"message": "Device updated by device_id"},
@@ -61,7 +60,7 @@ def add_device(request):
         )
 
     # new document
-    devices_ref.document(device_id).set(firestore_data)
+    devices_ref.document().set(firestore_data)
 
     return Response(
         {"message": "Device created successfully"},
