@@ -5,4 +5,4 @@ class DeviceSerializer(serializers.Serializer):
     fcm_token = serializers.CharField(max_length=512)
     app_version = serializers.CharField(max_length=50)
     version_code = serializers.IntegerField()
-    # locale = serializers.CharField(max_length=10)
+    locale = serializers.CharField(max_length=10)
