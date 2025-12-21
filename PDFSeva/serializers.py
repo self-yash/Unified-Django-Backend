@@ -10,6 +10,6 @@ class DeviceSerializer(serializers.Serializer):
     manufacturer = serializers.CharField(max_length=100)
     model= serializers.CharField(max_length=100)
     android_version = serializers.CharField(max_length=10)
-    sdk_version = serializers.IntegerField()
-    os_choices=[('Android', 'Android'), ('iOS', 'iOS')]
+    sdk_version = serializers.CharField()
+    os_choices=[('Android', 'android'), ('iOS', 'iOS')]
     os= serializers.ChoiceField(choices=os_choices)
